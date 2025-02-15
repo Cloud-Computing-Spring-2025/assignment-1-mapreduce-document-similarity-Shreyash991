@@ -93,6 +93,15 @@ The output should show the Jaccard Similarity between document pairs in the foll
 
 ---
 
+## Approach and Implementation
+
+### **Mapper**
+The Mapper processes input files, breaks down the words, and outputs key-value pairs whose key is a word and value is the ID of the document it belongs to.
+
+
+### **Reducer**
+The Reducer gathers all documentIDs related to a word, creates document sets, and calculates the Jaccard Similarity per document pairs.
+
 ### **🛠 Environment Setup: Running Hadoop in Docker**  
 
 Since we are using **Docker Compose** to run a Hadoop cluster, follow these steps to set up your environment.  
@@ -169,4 +178,18 @@ If you want to download the output to your local machine:
 ```sh
 hdfs dfs -get /output_final /path/to/local/output
 ```
----
+## Challenges Faced and Solutions
+
+## a)Debugging Hadoop Job Failures
+ 
+Used Hadoop logs (yarn logs -applicationId <app_id>) to debug and resolve issues.
+
+## b)Path issues
+
+Resolved this by explicitly checking HDFS paths and ensuring correct file permissions before execution. Verified file existence using:
+
+`hdfs dfs -ls /input`
+
+and corrected paths in job execution commands.
+
+
