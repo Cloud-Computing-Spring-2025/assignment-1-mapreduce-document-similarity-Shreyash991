@@ -1,0 +1,1 @@
+hadoop mapreduce big data processing analysis distributed system parallel computing cluster management scalable architecture data mining machine learning algorithms data warehousing real-time analytics fault tolerance high availability data ingestion stream processing.
